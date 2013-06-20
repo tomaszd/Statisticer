@@ -1,0 +1,37 @@
+1 start make.html
+2 change in conf.py to be sure that autodoc included
+3 create __init__.py in folder with project to make it package
+4 add project dir to PYTHONPATH : export PYHONPATH=$PROJ_DIR$
+5 modify .rst to be sure that it looks like : modulename.module file
+ Contents:
+ 
+.. toctree::
+   :maxdepth: 2
+ 
+.. automodule:: SomeModuleName.SomeModuleFile
+    :members:
+ 
+Indices and tables
+==================
+ 
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+6 make html or sphinx-build %proj_dir %documentation_dir
+
+
+contents:
+ 
+.. toctree::
+   :maxdepth: 2
+ 
+   installation.rst
+   code.rst
+ 
+Indices and tables
+==================
+ 
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
