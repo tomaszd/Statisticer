@@ -14,6 +14,13 @@ Contents:
 .. automodule:: StatisticsAndTrends.MonteCarlo 
     :members:
 
+.. automodule:: StatisticsAndTrends.Yahoo_finance_IBM
+    :members:
+
+
+
+
+
 Indices and tables
 ==================
 

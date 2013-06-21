@@ -51,10 +51,10 @@
 <ul class="simple">
 </ul>
 </div>
-<span class="target" id="module-StatisticsAndTrends.MonteCarlo"></span><p>Monte Carlo simulation for the symmetric 1D
+<span class="target" id="module-StatisticsAndTrends.MonteCarlo"></span><p><em>Monte Carlo simulation for the symmetric 1D
 andom walk
 Let us 
-x the number of steps in iiiiian individual symmetric 
+x the number of steps in an individual symmetric 
 D random walk to N = 100 and consider an ensemble of n = 10
 independent walks.Now, what does the distribution of end points x
 Now the ensemble of walks thus considered look like?
@@ -62,7 +62,7 @@ If you want to tackle that question by means of computer simulations, you
 may follow the subsequent three steps:
 (i) Implement the symmetric 1D random walk model using your favorite
 programming language. Using python [4], a minimal program to simulate
-the above model ( 1D_randWalk.py, see supplementary material) reads:</p>
+the above model ( 1D_randWalk.py, see supplementary material) reads:</em></p>
 <dl class="class">
 <dt id="StatisticsAndTrends.MonteCarlo.RandomWalkeR">
 <em class="property">class </em><tt class="descclassname">StatisticsAndTrends.MonteCarlo.</tt><tt class="descname">RandomWalkeR</tt><a class="headerlink" href="#StatisticsAndTrends.MonteCarlo.RandomWalkeR" title="Permalink to this definition">¶</a></dt>
@@ -70,11 +70,30 @@ the above model ( 1D_randWalk.py, see supplementary material) reads:</p>
 <dl class="method">
 <dt id="StatisticsAndTrends.MonteCarlo.RandomWalkeR.random_1D_walk">
 <tt class="descname">random_1D_walk</tt><big>(</big><em>n=1000</em>, <em>N=100</em>, <em>printing=False</em><big>)</big><a class="headerlink" href="#StatisticsAndTrends.MonteCarlo.RandomWalkeR.random_1D_walk" title="Permalink to this definition">¶</a></dt>
-<dd><p>Arguments:
-n - number of iterations
-N - number of iterations for pseudorandom -1 +1</p>
+<dd><p><strong>Arguments:</strong>
+<em>n</em> - number of iterations
+<em>N</em> - number of iterations for pseudorandom -1 +1</p>
 </dd></dl>
 
+</dd></dl>
+
+<span class="target" id="module-StatisticsAndTrends.Yahoo_finance_IBM"></span><dl class="class">
+<dt id="StatisticsAndTrends.Yahoo_finance_IBM.StockQuote">
+<em class="property">class </em><tt class="descclassname">StatisticsAndTrends.Yahoo_finance_IBM.</tt><tt class="descname">StockQuote</tt><big>(</big><em>quote</em><big>)</big><a class="headerlink" href="#StatisticsAndTrends.Yahoo_finance_IBM.StockQuote" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets stock data from Yahoo Finance</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="StatisticsAndTrends.Yahoo_finance_IBM.get_data_from_cvs">
+<tt class="descclassname">StatisticsAndTrends.Yahoo_finance_IBM.</tt><tt class="descname">get_data_from_cvs</tt><big>(</big><em>sp_500_directory='/home/tomaszd/workspace/StatisticsAndTrends/Data/SP500.ods'</em><big>)</big><a class="headerlink" href="#StatisticsAndTrends.Yahoo_finance_IBM.get_data_from_cvs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opening the cvs file and create the historical_data dictionary with keys equal to</p>
+<p>daily_data[date]= {&#8216;Open&#8217;:value,&#8217;High&#8217;:value,&#8217;Low&#8217;:value,&#8217;Close&#8217;:value,&#8217;Volume&#8217;:value,&#8217;Adj_Close&#8217;:value}</p>
+<p><strong>Paramters</strong></p>
+<p><em>sp_500_directory</em> dir to file with data containing for company   Date,Open,High,Low,Close,Volume,Adj_Close</p>
+<dl class="docutils">
+<dt><em>returns</em> <span class="classifier-delimiter">:</span> <span class="classifier"><em>dict</em> - the <strong>historical_data</strong> dict with keys to date in <em>YYYY-MM-DD</em> format and value is dict with</span> <span class="classifier-delimiter">:</span> <span class="classifier">keys :</span></dt>
+<dd><em>&#8216;Date&#8217;,&#8217;Open&#8217;,&#8217;High&#8217;,&#8217;Low&#8217;,&#8217;Close&#8217;,&#8217;Volume&#8217;,&#8217;Adj_Close&#8217;</em></dd>
+</dl>
 </dd></dl>
 
 </div>

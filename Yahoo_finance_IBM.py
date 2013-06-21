@@ -41,11 +41,19 @@ class StockQuote:
         return bytes.decode((urlopen(url).read().strip()))
 
 
-def openCSVFile(sp_500_directory='/home/tomaszd/workspace/StatisticsAndTrends/Data/SP500.ods'):
+def get_data_from_cvs(sp_500_directory='/home/tomaszd/workspace/StatisticsAndTrends/Data/SP500.ods'):
     '''
     Opening the cvs file and create the historical_data dictionary with keys equal to
     
     daily_data[date]= {'Open':value,'High':value,'Low':value,'Close':value,'Volume':value,'Adj_Close':value}
+    
+    **Paramters** 
+    
+    *sp_500_directory* dir to file with data containing for company   Date,Open,High,Low,Close,Volume,Adj_Close
+    
+    *returns* : *dict* - the **historical_data** dict with keys to date in *YYYY-MM-DD* format and value is dict with : keys :
+                            *'Date','Open','High','Low','Close','Volume','Adj_Close'*
+    
      
     '''
     SP500 = csv.reader(open(sp_500_directory, 'rb'), delimiter=',')
@@ -90,7 +98,7 @@ def main():
     IBM_historical='IBM_historical.csv'
     SP_500='SP500.csv'
     data_file='/home/tomaszd/workspace/StatisticsAndTrends/Data/'+IBM_historical
-    openCSVFile(data_file)
+    get_data_from_cvs(data_file)
 
 
 if __name__ == '__main__':
