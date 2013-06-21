@@ -42,35 +42,34 @@ class StockQuote:
 
 
 def openCSVFile(sp_500_directory='/home/tomaszd/workspace/StatisticsAndTrends/Data/SP500.ods'):
+    '''
+    Opening the cvs file and create the historical_data dictionary with keys equal to
+    
+    daily_data[date]= {'Open':value,'High':value,'Low':value,'Close':value,'Volume':value,'Adj_Close':value}
+     
+    '''
     SP500 = csv.reader(open(sp_500_directory, 'rb'), delimiter=',')
     print type(SP500)
     print 'reverting'
     reversed=[]
     for x in SP500:
         reversed.insert(0,x)
-    BIG_DICT={}
+    historical_data={}
     for x in reversed:
-        #print x
-        dict={}
-        #---------------------------------------------------------------- Date=x
-        #----------------------------------------------------------------- Open=
-        #----------------------------------------------------------------- High=
-        #------------------------------------------------------------------ Low=
-        #---------------------------------------------------------------- Close=
-        #--------------------------------------------------------------- Volume=
-        #------------------------------------------------------------ Adj_Close=
+        daily_data={}
         Date,Open,High,Low,Close,Volume,Adj_Close=x
         #print 'Date,Open,High,Low,Close,Volume,Adj_Close',Date,Open,High,Low,Close,Volume,Adj_Close
         #print "Date=%s, Open = %s , High= %s, Low=%s , Close=%s, Volume=%s,Adj_Close= %s " %(str(Date),Open,High,Low,Close,Volume,Adj_Close)
-        dict['Open']=Open
-        dict['High']=High
-        dict['Low']=Low
-        dict['Close']=Close
-        dict['Volume']=Volume
-        dict['Adj_Close']=Adj_Close
-        BIG_DICT['Date']=dict
-        
-        
+        daily_data['Open']=Open
+        daily_data['High']=High
+        daily_data['Low']=Low
+        daily_data['Close']=Close
+        daily_data['Volume']=Volume
+        daily_data['Adj_Close']=Adj_Close
+        historical_data[Date]=daily_data
+    for date,values in sorted(historical_data.items()):
+        print 'For date : %s values are :%s'%(date,values)     
+    return historical_data   
         
         
 def printdata(stk):
