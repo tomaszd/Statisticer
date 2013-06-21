@@ -11,24 +11,31 @@ programming language. Using python [4], a minimal program to simulate
 the above model ( 1D_randWalk.py, see supplementary material) reads:
 '''
 from random import seed,choice
-def random_1D_walk(n=1000, N=100,printing=False ):
+
+class RandomWalkeR():
     '''
-    Arguments:
-    n - number of iterations
-    N - number of iterations for pseudorandom -1 +1 
-    
+    random walker class
     '''
-    for s in range(n):
-        seed(s)
-        endPos=0
-        for i in range(N):
-            endPos+=choice([-1,1])
-        if printing:    
-            print s,endPos
-    
+    def __init__(self):
+        print "welcome in random walker "
+    def random_1D_walk(self,n=1000, N=100,printing=False ):
+        '''
+        Arguments:
+        n - number of iterations
+        N - number of iterations for pseudorandom -1 +1 
+        
+        '''
+        for s in range(n):
+            seed(s)
+            endPos=0
+            for i in range(N):
+                endPos+=choice([-1,1])
+            if printing:    
+                print s,endPos
+        
 if __name__=='__main__':
     
     # nice to use python 1D_MonteCarlo.py > N100_n100000.dat to store data 
     kwargs={'n':1000,'N':100,'printing':True}
-    
-    random_1D_walk(**kwargs)    
+    r1=RandomWalkeR()
+    r1.random_1D_walk(**kwargs)    
